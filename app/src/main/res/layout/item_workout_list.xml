@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="20dp"
+    android:paddingBottom="10dp"
+    android:paddingRight="15dp"
+    android:paddingLeft="15dp"
+    tools:ignore="MissingConstraints">
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="130dp"
+        android:layout_height="87dp"
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/item_image"
+        android:src="@drawable/workout_man"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="48dp" />
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15dp">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Legs"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/exercieses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/light_gray"
+            android:text="@string/_6_exercieses"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/light_gray"
+            android:text="10 min"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_gravity="bottom">
+
+        <ImageButton
+            android:id="@+id/itemBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/item_image" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="right"
+            android:text="@string/start"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="3dp"
+            android:layout_toEndOf="@+id/textView"
+            android:src="@drawable/baseline_arrow_right_alt_24" />
+    </RelativeLayout>
+
+</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
