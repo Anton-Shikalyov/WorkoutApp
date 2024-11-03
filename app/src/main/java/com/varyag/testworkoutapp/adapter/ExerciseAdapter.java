@@ -15,7 +15,6 @@ import java.util.ArrayList;
 public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.WorkoutViewHolder> {
     private ArrayList<SubExercises> workoutItems;
 
-
     public ExerciseAdapter(ArrayList<SubExercises> workoutItems) {
         this.workoutItems = workoutItems != null ? workoutItems : new ArrayList<>();
     }
@@ -38,8 +37,6 @@ public class ExerciseAdapter extends RecyclerView.Adapter<ExerciseAdapter.Workou
         holder.title.setText(item.title);
         holder.imageView.setImageResource(item.image);
         holder.time.setText(item.time);
-
-
     }
 
     @Override

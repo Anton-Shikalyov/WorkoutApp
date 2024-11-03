@@ -1,16 +1,11 @@
 package com.varyag.testworkoutapp.ui.exercise;
 
 import android.os.CountDownTimer;
-import android.util.Log;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-
-import com.varyag.testworkoutapp.entity.SubExercises;
 import com.varyag.testworkoutapp.entity.WorkoutItem;
 import com.varyag.testworkoutapp.ui.home.HomeModel;
-
 import java.util.ArrayList;
 
 public class ExerciseViewModel extends ViewModel {
@@ -21,7 +16,6 @@ public class ExerciseViewModel extends ViewModel {
     public ExerciseViewModel() {
         subEx = new MutableLiveData<>();
         timer = new MutableLiveData<>();
-
         loadWorkouts();
     }
     private void loadWorkouts() {

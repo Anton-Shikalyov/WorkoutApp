@@ -1,5 +1,6 @@
 package com.varyag.testworkoutapp.adapter;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +17,12 @@ import com.varyag.testworkoutapp.databinding.FragmentHomeBinding;
 import com.varyag.testworkoutapp.entity.WorkoutItem;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.WorkoutViewHolder> {
     private ArrayList<WorkoutItem> workoutItems;
     private final NavController navController;
     private final FragmentHomeBinding binding;
-
 
     public WorkoutAdapter(ArrayList<WorkoutItem> workoutItems, NavController navController, FragmentHomeBinding binding) {
         this.workoutItems = workoutItems != null ? workoutItems : new ArrayList<>();
@@ -29,6 +30,7 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.WorkoutV
         this.binding = binding;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void updateData(ArrayList<WorkoutItem> newWorkoutItems) {
         this.workoutItems = newWorkoutItems != null ? newWorkoutItems : new ArrayList<>();
         notifyDataSetChanged();
@@ -49,13 +51,12 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.WorkoutV
         holder.exercise.setText(item.exercise);
         holder.time.setText(item.time);
 
-
         holder.imageButton.setOnClickListener(view -> {
             if (navController != null) {
                 final FrameLayout frameLayout = (FrameLayout) binding.ellipse101;
                 final ImageView imageView =  binding.dumbbell;
                 frameLayout.setVisibility(View.VISIBLE);
-                DumbbelAnimation.startDumbbellAnimation(imageView,frameLayout, navController);
+                DumbbelAnimation.startDumbbellAnimation(Objects.requireNonNull(imageView), frameLayout, navController);
             }
         });
     }
@@ -79,7 +80,6 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.WorkoutV
             time = itemView.findViewById(R.id.time);
             imageView = itemView.findViewById(R.id.image);
             imageButton = itemView.findViewById(R.id.itemBtn);
-
         }
     }
 }
