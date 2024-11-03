@@ -20,7 +20,7 @@ public class HomeModel extends ViewModel {
         subExercises.add(new SubExercises("Lunges", "3 min", lunges));
         subExercises.add(new SubExercises("BulgarianLunges", "3 min", bulgarianLunges));
 
-        arr.add(new WorkoutItem(image, bigImage, "Legs", "exercise", "10min", "200 Kcal", subExercises));
+        arr.add(new WorkoutItem(image, bigImage, "Legs", "6", "10", "200 ", subExercises));
 
         return arr;
     }

@@ -29,6 +29,7 @@ public class ExerciseFragment extends Fragment {
     private FragmentExerciseBinding binding;
     private ExerciseAdapter exerciseAdapter;
 
+    @SuppressLint("SetTextI18n")
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         ExerciseViewModel exerciseViewModel =
@@ -40,7 +41,8 @@ public class ExerciseFragment extends Fragment {
         final FrameLayout start = binding.startFrame;
         final TextView startText = binding.start;
         final TextView title = binding.title;
-        final TextView exercieses = binding.exercieses;
+        final TextView time = binding.time;
+        final TextView exercice = binding.exercieses;
         final TextView kcal = binding.kcal;
         final ImageView imageView = binding.imageBig;
         NavController navController = NavHostFragment.findNavController(this);
@@ -63,8 +65,9 @@ public class ExerciseFragment extends Fragment {
                 exerciseAdapter.updateData(workoutItems.get(0).subExercises);
             }
             title.setText(Objects.requireNonNull(workoutItems).get(0).title);
-            exercieses.setText(workoutItems.get(0).exercise);
-            kcal.setText(workoutItems.get(0).kcal);
+            exercice.setText(workoutItems.get(0).exercise + " exercise");
+            kcal.setText(workoutItems.get(0).kcal + "Kcal");
+            time.setText(workoutItems.get(0).time + "min");
             imageView.setImageResource(workoutItems.get(0).bigImage);
         });
 

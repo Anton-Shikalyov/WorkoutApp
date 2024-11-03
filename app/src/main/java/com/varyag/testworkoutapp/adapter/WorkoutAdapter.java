@@ -43,13 +43,14 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.WorkoutV
         return new WorkoutViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull WorkoutViewHolder holder, int position) {
         WorkoutItem item = workoutItems.get(position);
         holder.title.setText(item.title);
         holder.imageView.setImageResource(item.image);
-        holder.exercise.setText(item.exercise);
-        holder.time.setText(item.time);
+        holder.exercise.setText(item.exercise + " exercise");
+        holder.time.setText(item.time + " min");
 
         holder.imageButton.setOnClickListener(view -> {
             if (navController != null) {

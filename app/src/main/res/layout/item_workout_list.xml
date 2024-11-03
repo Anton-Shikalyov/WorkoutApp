@@ -40,7 +40,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/light_gray"
-            android:text="@string/_6_exercieses"
             android:textSize="15sp" />
         <TextView
             android:id="@+id/time"
